@@ -23,25 +23,12 @@ const nextParagraph = firstParagraph.nextElementSibling;
 console.log(nextParagraph);
 
 // Iterate over a collection of elements to accomplish some task
-let listEl = document.querySelectorAll('li');
-console.log(listEl);
+let commentsEls = document.getElementsByClassName('note');
+console.log(commentsEls);
 
-// listEl.forEach(listItem => {
-//     console.log(listItem.className);
-//     if (listItem.className === 'comment') {
-//         console.log('i could do something with only these li')
-//     } else {
-//         console.log('and i could ignore these')
-//         listItem.className = 'purple'
-//         // this makes the class name purple
-//         // but you can also use
-//         listItem.classList.add('pinkText');
-//         // you can see the entire class list using
-//         console.log( listItem.classList);
-//         console.log('CHECKING WHAT GETATTRIBUTE(CLASS) does')
-//         console.log(listItem.getAttribute("class"));
-//     }
-// })
+for(let commentEl of commentsEls) {
+    console.log(commentEl);
+}
 
 // Create at least one element using createElement (also uses appendChild)
 const newPara = document.createElement("p");
@@ -75,9 +62,40 @@ pEl.addEventListener('click', function () {
     }
 });
 
-// Event listener #2
+// Event listener #2 
 document.getElementById('myBtn').addEventListener('click', function() {
-    alert("Surprise!");
+    if (window.confirm("Press this button")) {
+        txt = "You pressed OK and some text appeared!";
+    } else {
+        txt = "You pressed cancel and this new text appeared!";
+    }
+    document.getElementById("validationText").innerHTML = txt;
 });
 
+// Use at least two BOM properties or methods (BOM used in eventlistener above in window.confirm)
+console.log("Screen width is " + screen.width, "px");
+console.log("Screen width is " + screen.height, "px");
+
+// Include at least one form and/or input with DOM event-based validation. 
+//(This can be the same form or input as the one above, but should include event-based validation in addition to the HTML attribute validation.)
+document.getElementById('signup-form').addEventListener('submit', function (event) {
+    let username = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
+    let confirmPassword = document.getElementById('confirm-password').value;
+
+    // Validate username
+    if (username.trim() === '' || username.length < 8 || username.length > 16) {
+        document.getElementById('username-error').textContent = 'Username must be 8 to 16 characters long.';
+        event.preventDefault();
+    } else {
+        document.getElementById('username-error').textContent = '';
+    }
+
+    if (confirmPassword !== password) {
+        document.getElementById('confirm-password-error').textContent = 'Passwords do not match.';
+        event.preventDefault();
+    } else {
+        document.getElementById('confirm-password-error').textContent = '';
+    }
+});
 

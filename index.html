@@ -23,7 +23,7 @@
         <ul>
             <li><a class="active" href="#home">Home</a></li>
             <li><a href="#guide">A Guide To DOM</a></li>
-            
+
             <li style="float:right"><a>Log In</a></li>
             <li style="float:right"><a>Register</a></li>
         </ul>
@@ -46,16 +46,43 @@
 
         <h2>This is to cache my h2 element</h2>
 
-        <p class="cool" id="colorChange">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi eos maiores nam adipisci, totam tempore nihil deleniti veniam dolore eveniet similique nesciunt, sequi dolor necessitatibus nobis ullam iure consectetur cumque!</p>
+        <p class="cool" id="colorChange">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi eos maiores nam
+            adipisci, totam tempore nihil deleniti veniam dolore eveniet similique nesciunt, sequi dolor necessitatibus
+            nobis ullam iure consectetur cumque!</p>
 
         <div id="mainContainer">
-            <p id="comment">First comment</p>
-            <p>Second comment</p>
-            <p>Third comment</p>
-            <p>Fourth comment</p>
+            <p id="comment" class="note">First comment</p>
+            <p id="comment" class="note">Second comment</p>
+            <p id="comment" class="note">Third comment</p>
+            <p id="comment" class="note">Fourth comment</p>
         </div>
-        
+
         <button id="myBtn">Click me for surprise!</button>
+        <p id="validationText"></p>
+        
+        <hr><br>
+
+        <form id="signup-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required minlength="8" maxlength="16">
+            <span class="error" id="username-error"></span> <br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required minlength="8"
+                pattern="$#&*^$&#Q@*()#(@(&*))">
+            <span class="error" id="password-error"></span> <br><br>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+            <span class="error" id="confirm-password-error"></span>
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+</body>
+
+</html>
+
 
 </body>
 

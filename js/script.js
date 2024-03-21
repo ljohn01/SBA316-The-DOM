@@ -61,12 +61,23 @@ document.body.appendChild(fragment);
 let pEl = document.querySelector('.cool');
 console.log(pEl);
 pEl.textContent = 'Click me to change my color!';
+
 //Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties.
 pEl.style.textAlign = 'center';
 pEl.style.color = 'hotpink';
 
-let colorChange = document.getElementById('colorChange');
-colorChange.onclick = function () {
-    colorChange.style.color = 'darkblue';
-}
+// Event listener #1
+pEl.addEventListener('click', function () {
+    if (pEl.style.color === 'hotpink') {
+        pEl.style.color = 'darkblue';
+    } else {
+        pEl.style.color = 'hotpink';
+    }
+});
+
+// Event listener #2
+document.getElementById('myBtn').addEventListener('click', function() {
+    alert("Surprise!");
+});
+
 

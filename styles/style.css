@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    padding-left:10px;
+}
+h2 {
+text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f3289f;
+  }
+  
+  li {
+    float: left;
+    border-right: 1px solid #bbb;
+  }
+  
+  li:last-child {
+    border-right: none;
+  }
+
+  li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #701349;
+  }
+  
+  .active {
+    background-color: #ffb7e1;
+  }
+
+  .login-user {
+    height: 1em;
+    margin-right: 0.5em;
+    vertical-align: bottom;
+ }
+ 
+ .column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+    margin-left: 30px;
+  }
+  
+ 
+  .row {margin: 0 -5px;}
+  
+ 
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+   
+  }
+
+  img {
+   width: 200px;
+   height: 150px;
+  }
+
+  .column-right {
+    float: left;
+    margin-left: 200px;
+    margin-bottom: 100px;
+    width: 25%;
+    padding-left: 20px;
+  }
+
+  .container {
+    display: flex;
+    border: 3px rgb(255, 7, 160) solid;
+    padding: 10px;
+    /* height: 150px; */
+    justify-content: space-around;
+    margin: 10px;
+    flex-wrap: wrap;
+    font-size: 20px;
+    color: rgb(223, 15, 160);
+    font-style: oblique;
+}
+
+.pinkText {
+    color: pink;
+}
